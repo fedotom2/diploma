@@ -1,0 +1,32 @@
+{
+  "name": "diploma",
+  "version": "1.0.0",
+  "description": "KPI diploma work",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fedotom2/diploma.git"
+  },
+  "keywords": [
+    "javascript",
+    "js",
+    "web",
+    "express",
+    "mongodb"
+  ],
+  "author": "Max Fedotov <fedotom2@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fedotom2/diploma/issues"
+  },
+  "homepage": "https://github.com/fedotom2/diploma#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "config": "^3.3.6",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.7"
+  }
+}
