@@ -1,7 +1,7 @@
 'use strict';
 
 const { Schema, model, Types } = require('mongoose');
-const { ObjectID } = Types;
+const { ObjectId } = Types;
 
 const schema = Schema({
   name: { type: String, required: true },
@@ -10,10 +10,10 @@ const schema = Schema({
   email: { type: String, required: true, unique: true },
   phone: { type: String, required: true, unique: true },
   avatar: { type: String },
-  role: { type: ObjectID, required: true },
-  parents: { type: [ObjectID] },
-  childrens: { type: [ObjectID] },
-  class: { type: ObjectID },
+  role: { type: ObjectId, required: true },
+  parents: { type: [ObjectId] },
+  childrens: { type: [ObjectId] },
+  class: { type: ObjectId },
   password: { type: String }
 });
 
