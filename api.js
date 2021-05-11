@@ -6,4 +6,6 @@ const router = Router();
 router.get('/test', require('./controllers/test.js').get);
 router.post('/test', require('./controllers/test.js').post);
 
+router.post('/user', require('./controllers/user.js').post);
+
 module.exports = router;
