@@ -21,14 +21,22 @@ router.get('/', auth, async (req, res) => {
 // /api/profile/update/
 router.post('/update', auth, async (req, res) => {
   try {
+    const userId = req.user.userId;
     const { name, surname, patronymic, email, phone, password } = req.body;
 
     if (password === '') {
+      await User.updateOne({ _id: userId }, { $set: {
+        name, surname, patronymic, email, phone
+      }});
 
     } else {
       const hashedPassword = await bcrypt.hash(password, 12);
-      
+      await User.updateOne({ _id: userId }, { $set: {
+        name, surname, patronymic, email, phone, password: hashedPassword
+      }});
     }
+
+    res.json({ message: 'Профіль оновлено' });
 
   } catch (err) {
     console.error(err.message);

@@ -33,27 +33,27 @@ export const RegisterPage = () => {
 
   return (
     <div className="register-form">
-      <h1>Register</h1>
+      <h1>Реєстрація</h1>
       <form onChange={changeHandler}>
         <div className="input-group mb-2">
-          <input type="text" className="form-control" name="name" placeholder="Name" />
-          <input type="text" className="form-control" name="surname" placeholder="Surname" />
+          <input type="text" className="form-control" name="name" placeholder="Ім'я" />
+          <input type="text" className="form-control" name="surname" placeholder="Призвіще" />
         </div>
         <div>
-          <input type="text" className="form-control" name="email" placeholder="Email" />
+          <input type="text" className="form-control" name="email" placeholder="E-mail" />
         </div>
         <div>
-          <input type="text" className="form-control" name="phone" placeholder="Phone" />
+          <input type="text" className="form-control" name="phone" placeholder="Телефон" />
         </div>
         <div>
-          <input type="password" className="form-control" name="password" placeholder="Password" />
+          <input type="password" className="form-control" name="password" placeholder="Пароль" />
         </div>
         <div>
-          <input type="password" className="form-control" name="repassword" placeholder="Repeat password" />
+          <input type="password" className="form-control" name="repassword" placeholder="Повторити пароль" />
         </div>
         <div>
-          <button className="btn btn-primary" onClick={ registerHandler } disabled={ loading }>Sign up</button>
-          <NavLink to="/" className="btn btn-link">Log in</NavLink>
+          <button className="btn btn-primary" onClick={ registerHandler } disabled={ loading }>Зареєструвати</button>
+          <NavLink to="/" className="btn btn-link">Авторизація</NavLink>
         </div>
       </form>
     </div>

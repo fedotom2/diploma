@@ -1,10 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext.js';
+import { useHttp } from '../hooks/http.hook.js';
+import { useMessage } from '../hooks/message.hook.js';
 
 export const ProfileCard = (props) => {
   const history = useHistory();
+  const message = useMessage();
   const auth = useContext(AuthContext);
+  const { request } = useHttp();
   const [form, setForm] = useState({
     name: props.userInfo.name,
     surname: props.userInfo.surname,
@@ -14,10 +18,17 @@ export const ProfileCard = (props) => {
     password: ''
   });
 
+  const updateProfileHandler = async (e) => {
+    try {
+      e.preventDefault();
+      const data = await request('/api/profile/update', 'POST', { ...form }, {
+        Authorization: `Bearer ${auth.token}`
+      });
 
-  const updateProfileHandler = (e) => {
-    e.preventDefault();
-    
+      message(data.message, 'success');
+    } catch (err) {
+      message(err.message, 'error');
+    }
   };
 
   const changeHandler = e => {
@@ -69,7 +80,7 @@ export const ProfileCard = (props) => {
                   className="form-control p-0 border-0" name="patronymic" defaultValue={ props.userInfo.patronymic } /> </div>
             </div>
             <div className="form-group mb-4">
-              <label for="example-email" className="col-md-12 p-0">E-mail</label>
+              <label htmlFor="example-email" className="col-md-12 p-0">E-mail</label>
               <div className="col-md-12 border-bottom p-0">
                 <input type="email" placeholder="johnathan@admin.com"
                   className="form-control p-0 border-0" name="email"

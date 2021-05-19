@@ -31,17 +31,17 @@ export const AuthPage = () => {
 
   return (
     <div className="login-form">
-      <h1>Log in</h1>
+      <h1>Авторизація</h1>
       <form onChange={changeHandler}>
         <div>
-          <input type="text" className="form-control" name="email" placeholder="email" />
+          <input type="text" className="form-control" name="email" placeholder="E-mail" />
         </div>
         <div>
-          <input type="password" className="form-control" name="password" placeholder="password" />
+          <input type="password" className="form-control" name="password" placeholder="Пароль" />
         </div>
         <div>
-          <button className="btn btn-primary" onClick={ loginHandler } disabled={ loading }>Log in</button>
-          <NavLink to="/register" className="btn btn-link">Sign up</NavLink>
+          <button className="btn btn-primary" onClick={ loginHandler } disabled={ loading }>Вхід</button>
+          <NavLink to="/register" className="btn btn-link">Реєстрація</NavLink>
         </div>
       </form>
     </div>
