@@ -1,4 +1,5 @@
 {
   "PORT": 8000,
-  "MONGO_URI": "mongodb://localhost:27017/diploma"
+  "MONGO_URI": "mongodb://localhost:27017/diploma",
+  "jwtSecret": "Max Fedotov IT-74 Diploma work"
 }

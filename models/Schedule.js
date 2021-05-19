@@ -1,10 +1,13 @@
 'use strict';
 
-const { Scheme, model } = require('mongoose');
+const { Schema, model, Types } = require('mongoose');
 const { ObjectId } = Types;
 
-const scheme = new Scheme({
-
+const schema = new Schema({
+  class: { type: ObjectId, required: true },
+  day: { type: String },
+  lesson: { type: Number },
+  subject: { type: ObjectId }
 });
 
-module.exports = model('Schedule', scheme);
+module.exports = model('Schedule', schema);

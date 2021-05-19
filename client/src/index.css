@@ -1,0 +1,24 @@
+.login-form {
+  width: 300px;
+  margin: 200px auto;
+}
+
+.login-form > form > div {
+  margin-top: 20px;
+}
+
+.register-form {
+  width: 300px;
+  margin: 100px auto;
+}
+
+.register-form > form > div {
+  margin-top: 20px;
+}
+
+.error-display {
+  width: 400px;
+  position: absolute;
+  right: 50px;
+  bottom: 0;
+}

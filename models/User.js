@@ -10,7 +10,7 @@ const schema = Schema({
   email: { type: String, required: true, unique: true },
   phone: { type: String, required: true, unique: true },
   avatar: { type: String },
-  role: { type: ObjectId, required: true },
+  role: { type: ObjectId, required: true, default: '6093bcd387669f628ae883bf' },
   parents: { type: [ObjectId] },
   childrens: { type: [ObjectId] },
   class: { type: ObjectId },
