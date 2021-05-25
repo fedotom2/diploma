@@ -12,6 +12,7 @@ app.use(express.json({ extended: true }));
 
 app.use('/api/auth', require('./routes/auth.routes.js'));
 app.use('/api/profile', require('./routes/profile.routes.js'));
+app.use('/api/users', require('./routes/users.routes.js'));
 
 if (process.env.NODE_ENV === 'production') {
   app.use('/', express.static(path.join(__dirname, 'client', 'build')));

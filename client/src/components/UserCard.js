@@ -4,7 +4,7 @@ import { AuthContext } from '../context/AuthContext.js';
 import { useHttp } from '../hooks/http.hook.js';
 import { useMessage } from '../hooks/message.hook.js';
 
-export const ProfileCard = (props) => {
+export const UserCard = (props) => {
   const history = useHistory();
   const message = useMessage();
   const auth = useContext(AuthContext);
@@ -21,7 +21,7 @@ export const ProfileCard = (props) => {
   const updateProfileHandler = async (e) => {
     try {
       e.preventDefault();
-      const data = await request('/api/profile/update', 'POST', { ...form }, {
+      const data = await request('/api/users/update/' + props.userId, 'POST', { ...form }, {
         Authorization: `Bearer ${auth.token}`
       });
 
@@ -33,12 +33,6 @@ export const ProfileCard = (props) => {
 
   const changeHandler = e => {
     setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const logoutHandler = (e) => {
-    e.preventDefault();
-    auth.logout();
-    history.push('/');
   };
 
   return (
@@ -103,7 +97,6 @@ export const ProfileCard = (props) => {
             <div className="form-group mb-4">
               <div className="col-sm-12">
                 <button className="btn btn-success" onClick={ updateProfileHandler }>Оновити профіль</button>
-                <button className="btn btn-warning" onClick={ logoutHandler }>Вийти</button>
               </div>
             </div>
           </form>

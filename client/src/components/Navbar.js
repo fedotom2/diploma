@@ -2,12 +2,14 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 export const Navbar = (props) => {
+  const noop = () => undefined;
+
   return (
     <header className="topbar" data-navbarbg="skin5">
       <nav className="navbar top-navbar navbar-expand-md navbar-dark">
         <div className="navbar-header" data-logobg="skin6">
           <NavLink className="navbar-brand" to="/dashboard">
-            <img src="plugins/images/logo-text.svg" width="150" alt="homepage" />
+            <img src="/plugins/images/logo-text.svg" width="150" alt="homepage" />
           </NavLink>
           <a className="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
             href="javascript:void(0)" rel="noopener noreferrer"><i className="ti-menu ti-close"></i></a>
@@ -30,7 +32,7 @@ export const Navbar = (props) => {
             </li>
             <li>
               <NavLink className="profile-pic" to="/profile">
-                <img src="images/no-avatar.png" alt="user-img" width="36"
+                <img src="/images/no-avatar.png" alt="user-img" width="36"
                   className="img-circle" /><span className="text-white font-medium">{ props.name }</span>
               </NavLink>
             </li>
